@@ -12,7 +12,7 @@ document.onkeyup = function(event) {
 	var userGuess = event.key;
 	
 	// initial condition that confirms user is choosing from the pool of possible winnng choices
-	if (guessPool.indexOf(userGuess) !== -1) {
+	if (guessPool.indexOf(userGuess) !== -1 && guessArr.indexOf(userGuess) === -1) {
 		// if user is right, they get a point and game is reset
 		if (userGuess === compChoice) {
 			wins += 1;
