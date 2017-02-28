@@ -12,6 +12,7 @@ document.onkeyup = function(event) {
 	var userGuess = event.key;
 	
 	// initial condition that confirms user is choosing from the pool of possible winnng choices
+	// also checks whether the user has already guessed that letter / prevents repeats
 	if (guessPool.indexOf(userGuess) !== -1 && guessArr.indexOf(userGuess) === -1) {
 		// if user is right, they get a point and game is reset
 		if (userGuess === compChoice) {
@@ -56,7 +57,7 @@ function print() {
 	var html = "<p>Wins: " + wins + "</p>" +
 	"<p>Losses: "+ losses + "</p>" +
 	"<p>Guesses Left: " + guessesLeft + "</p>" +
-	"<p>Your Guesses: "+ guessArr.join(', ') + "</p>";
+	"<p>Your Guesses: "+ guessArr.join(', ').toUpperCase() + "</p>";
 
 	document.querySelector('#game').innerHTML = html;
 }
