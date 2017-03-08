@@ -7,8 +7,6 @@ var guessArr = [];
 var guessPool = "abcdefghijklmnopqrstuvwxyz";
 var compChoice = randomLetter();
 
-// i setup a series of specific functions to make editing/running more versatile and organized
-
 // assigns random letter to var compChoice when called
 function randomLetter() {
 
@@ -36,9 +34,6 @@ function print() {
 	document.querySelector('#game').innerHTML = html;
 
 }
-
-// is it better to put this section of code before or after the defined functions?
-console.log("start " + compChoice);
 
 document.onkeyup = function(event) {
 	var userGuess = event.key;
@@ -68,7 +63,6 @@ document.onkeyup = function(event) {
 				guessArr.push(userGuess);
 				print();
 				compChoice = randomLetter();
-				console.log("loss " + compChoice);
 			}
 		}
 	}
